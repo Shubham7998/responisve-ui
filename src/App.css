@@ -2,42 +2,47 @@
 * {
   margin: 0;              /* Remove default margins */
   padding: 0;             /* Remove default paddings */
-  box-sizing: border-box; /* Makes width/height include padding + border */
+  box-sizing: border-box; /* Makes width/height include padding border */
   font-family: sans-serif;/* Cleaner default font */
 }
 
 /* Main wrapper for the whole app */
 .app {
   display: flex;          /* By default, this places sections side-by-side */
-  max-width: 1200px;      /* Restrict width so content doesn’t stretch too wide */
+  /* max-width: 1200px;       Restrict width so content doesn’t stretch too wide */
   margin: auto;           /* Center the app horizontally */
-  padding: 20px;          /* Add space inside around the content */
+  padding: 10px;          /* Add space inside around the content */
 }
 
 /* Common style for all sections */
 .section {
-  margin-bottom: 40px;    /* Space between sections */
   flex: 1;                /* Each section takes equal share in flex layout */
   padding: 10px;          /* Space inside the section */
 }
 
 /* Section 1 styles */
 .section1 {
+  max-width: 33%;
   background: #f9f9f9;    /* Light background to visually separate it */
   border-radius: 10px;    /* Rounded corners for a softer UI */
 }
 
+/* Table wrapper */
+.table-wrapper {
+  overflow-x: auto;       /* Horizontal scroll if table is too wide */
+  margin-top: 15px;
+  border: 1px solid #ddd; /* Optional: boundary for scroll area */
+}
 /* Main table styles */
 .main-table {
-  width: 100%;            /* Table takes full width of its container */
-  border-collapse: collapse; /* Merge table cell borders into single lines */
-  margin-top: 15px;       /* Space between header and table */
+  border-collapse: collapse;
 }
 
 .main-table th,
 .main-table td {
   border: 1px solid #ddd; /* Light border around cells */
-  padding: 8px;           /* Space inside cells for readability */
+  padding: 10px;           /* Space inside cells for readability */
+  white-space: nowrap;  /* Prevent text from wrapping */
 }
 
 /* Section 2 (blocks layout) */
@@ -57,7 +62,6 @@
 /* Block 2 contains two horizontal "sub-blocks" */
 .block2 {
   display: flex;          /* Flexbox to place sub-blocks side by side */
-  flex-direction: column; /* Currently stacking vertically (can change to row) */
   gap: 10px;              /* Space between sub-blocks */
 }
 
@@ -67,15 +71,23 @@
   padding: 10px;          /* Internal spacing */
   border-radius: 5px;     /* Slightly rounded corners */
   text-align: center;     /* Center text horizontally */
+  overflow-x: auto;       /* Enable horizontal scrolling if content overflows */  
+  max-height: 7rem;
+  scrollbar-width: thin; /* For Firefox: thinner scrollbar */
+
 }
 
 /* Notes block styling */
 .block3 textarea {
   width: 90%;             /* Only takes 90% width (you may want 100% instead) */
-  min-height: 100px;      /* Ensures a minimum vertical size */
+  min-height: 7rem;      /* Ensures a minimum vertical size */
   padding: 10px;          /* Space inside textarea for better UX */
 }
 
+.block4 p {
+  max-height: 100px;
+  overflow-y: auto;       /* Enable vertical scrolling if content overflows */
+}
 /* Section 3 (grid of 4 tables) */
 .table-grid {
   display: grid;          /* Grid layout to arrange mini-tables */
