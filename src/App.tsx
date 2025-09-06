@@ -39,7 +39,7 @@ export default function App() {
       <section className="section section2">
         {/* Block 1 - Small table */}
         <div className="block block1">
-          <h2>Small Table</h2>
+          <h6>Small Table</h6>
           <table>
             <thead>
               <tr>
@@ -62,13 +62,13 @@ export default function App() {
 
         {/* Block 3 - Notes */}
         <div className="block block3">
-          <h2>Notes</h2>
+          <h6>Notes</h6>
           <textarea placeholder="Write notes here..."></textarea>
         </div>
 
         {/* Block 4 - Description */}
         <div className="block block4">
-          <h2>Description</h2>
+          <h6>Description</h6>
           <p>
             This is the description block. It contains longer text that wraps
             responsively.
@@ -90,13 +90,13 @@ export default function App() {
               <table>
                 <thead>
                   <tr>
-                    <th>X</th>
-                    <th>Y</th>
+                    <th>Positive</th>
+                    <th>Negative</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr><td>1</td><td>2</td></tr>
-                  <tr><td>3</td><td>4</td></tr>
+                  <tr><td>Positive</td><td>2</td></tr>
+                  <tr><td>Negative</td><td>4</td></tr>
                 </tbody>
               </table>
             </div>

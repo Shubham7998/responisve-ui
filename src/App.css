@@ -1,38 +1,67 @@
 /* Reset styles to ensure consistency across browsers */
 * {
-  margin: 0;              /* Remove default margins */
-  padding: 0;             /* Remove default paddings */
-  box-sizing: border-box; /* Makes width/height include padding border */
-  font-family: sans-serif;/* Cleaner default font */
+  /* margin: 10; */
+  /* Remove default margins */
+  padding: 0;
+  /* Remove default paddings */
+  box-sizing: border-box;
+  /* Makes width/height include padding border */
+  font-family: sans-serif;
+  /* Cleaner default font */
+}
+
+/* Make sure html, body, #root, and .app take at least the full height of the viewport */
+html,
+body,
+#root,
+.app {
+  height: 100%;
+  min-height: 100%;
+  overflow-x: auto;
+  /* Prevent horizontal overflow */
 }
 
 /* Main wrapper for the whole app */
 .app {
-  display: flex;          /* By default, this places sections side-by-side */
+  display: flex;
+  /* By default, this places sections side-by-side */
   /* max-width: 1200px;       Restrict width so content doesn’t stretch too wide */
-  margin: auto;           /* Center the app horizontally */
-  padding: 10px;          /* Add space inside around the content */
+  margin: auto;
+  /* Center the app horizontally */
+  padding: 10px 0px;
+  /* Add space inside around the content */
 }
 
 /* Common style for all sections */
 .section {
-  flex: 1;                /* Each section takes equal share in flex layout */
-  padding: 10px;          /* Space inside the section */
+  flex: 1 0 33%;
+  min-width: 280px;
+  padding: 7px;
+  /* Space inside the section */
+}
+
+h1 {
+  text-align: center;
 }
 
 /* Section 1 styles */
 .section1 {
   max-width: 33%;
-  background: #f9f9f9;    /* Light background to visually separate it */
-  border-radius: 10px;    /* Rounded corners for a softer UI */
+  background: #f9f9f9;
+  /* Light background to visually separate it */
+  border-radius: 10px;
+  /* Rounded corners for a softer UI */
 }
 
 /* Table wrapper */
 .table-wrapper {
-  overflow-x: auto;       /* Horizontal scroll if table is too wide */
+  overflow-x: auto;
+  /* Horizontal scroll if table is too wide */
   margin-top: 15px;
-  border: 1px solid #ddd; /* Optional: boundary for scroll area */
+  border: 1px solid #ddd;
+  /* Optional: boundary for scroll area */
 }
+
 /* Main table styles */
 .main-table {
   border-collapse: collapse;
@@ -40,65 +69,123 @@
 
 .main-table th,
 .main-table td {
-  border: 1px solid #ddd; /* Light border around cells */
-  padding: 10px;           /* Space inside cells for readability */
-  white-space: nowrap;  /* Prevent text from wrapping */
+  border: 1px solid #ddd;
+  /* Light border around cells */
+  padding: 10px;
+  /* Space inside cells for readability */
+  white-space: nowrap;
+  /* Prevent text from wrapping */
 }
 
 /* Section 2 (blocks layout) */
 .section2 {
-  display: flex;          /* Arrange blocks in a column */
-  flex-direction: column; /* Ensure blocks stack vertically */
-  gap: 20px;              /* Space between each block */
+  display: flex;
+  /* Arrange blocks in a column */
+  flex-direction: column;
+  /* Ensure blocks stack vertically */
+  gap: 20px;
+  /* Space between each block */
 }
 
 /* Generic block style */
 .block {
-  background: #fff;       /* White background for contrast */
-  border: 1px solid #ddd; /* Light border to separate block visually */
-  border-radius: 10px;    /* Rounded corners */
+  background: #fff;
+  /* White background for contrast */
+  border: 1px solid #ddd;
+  /* Light border to separate block visually */
+  border-radius: 10px;
+  /* Rounded corners */
+}
+
+.block {
+  h6 {
+    font-size: medium;
+    margin: 10px 5px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
 }
 
 /* Block 2 contains two horizontal "sub-blocks" */
 .block2 {
-  display: flex;          /* Flexbox to place sub-blocks side by side */
-  gap: 10px;              /* Space between sub-blocks */
+  display: flex;
+  /* Flexbox to place sub-blocks side by side */
+  gap: 10px;
+  /* Space between sub-blocks */
 }
 
 /* Sub-block styling */
 .sub-block {
-  background: #f5f5f5;    /* Light gray background */
-  padding: 10px;          /* Internal spacing */
-  border-radius: 5px;     /* Slightly rounded corners */
-  text-align: center;     /* Center text horizontally */
-  overflow-x: auto;       /* Enable horizontal scrolling if content overflows */  
-  max-height: 7rem;
-  scrollbar-width: thin; /* For Firefox: thinner scrollbar */
+  background: #f5f5f5;
+  /* Light gray background */
+  padding: 10px;
+  /* Internal spacing */
+  border-radius: 5px;
+  /* Slightly rounded corners */
+  text-align: center;
+  /* Center text horizontally */
+  overflow-x: auto;
+  /* Enable horizontal scrolling if content overflows */
+  max-height: 4rem;
+  scrollbar-width: thin;
+  /* For Firefox: thinner scrollbar */
 
 }
 
 /* Notes block styling */
 .block3 textarea {
-  width: 90%;             /* Only takes 90% width (you may want 100% instead) */
-  min-height: 7rem;      /* Ensures a minimum vertical size */
-  padding: 10px;          /* Space inside textarea for better UX */
+  width: 90%;
+  /* Only takes 90% width (you may want 100% instead) */
+  min-height: 7rem;
+  /* Ensures a minimum vertical size */
+  padding: 10px;
+  /* Space inside textarea for better UX */
 }
 
 .block4 p {
   max-height: 100px;
-  overflow-y: auto;       /* Enable vertical scrolling if content overflows */
+  overflow-y: auto;
+  /* Enable vertical scrolling if content overflows */
 }
+
 /* Section 3 (grid of 4 tables) */
 .table-grid {
-  display: grid;          /* Grid layout to arrange mini-tables */
-  grid-template-columns: repeat(2, 1fr); /* 2 columns of equal width */
-  gap: 20px;              /* Space between grid items */
+  display: grid;
+  /* Grid layout to arrange mini-tables */
+  grid-template-columns: repeat(2, 1fr);
+  /* 2 columns of equal width */
+  gap: 20px;
+  border-collapse: collapse;
+  padding: 10px 0px;
+  /* Space between grid items */
+}
+
+.table-grid td {
+  padding: 15px 10px;
+  border: 1px solid #ddd;
+
 }
 
 /* Mini table container styling */
 .mini-table {
-  background: #fff;       /* White background for contrast */
-  padding: 15px;          /* Internal spacing */
-  border: 1px solid #ddd; /* Light border around each mini table */
-  border-radius: 10px;    /* Rounded corners */
+  background: #fff;
+  /* White background for contrast */
+  padding: 15px;
+  /* Internal spacing */
+  border: 1px solid #ddd;
+  /* Light border around each mini table */
+  border-radius: 10px;
+  /* Rounded corners */
+}
+
+@media (max-width : 1024px) {
+  .block2 {
+    flex-direction: column;
+    /* Stack sub-blocks vertically on smaller screens */
+  }
+
+  .table-grid {
+    grid-template-columns: repeat(1, 1fr);
+    /* Still 2 columns */
+  }
 }
